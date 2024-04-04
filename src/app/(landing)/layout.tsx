@@ -1,12 +1,11 @@
-import { Footer } from "@/components/layouts/footer";
+import { Navbar } from "@/components/navbar";
 import "../globals.css";
-import AppBar from "@/components/layouts/app-bar";
+import Footer from "@/components/footer";
 
 export const metadata = {
-  title: "Plataforma",
-  description: "Plataforma de empleo de IFV",
-}
-
+  title: "Empower Hub",
+  description: "The empowerment hub",
+};
 
 export default function LandingLayout({
   children,
@@ -15,9 +14,9 @@ export default function LandingLayout({
 }) {
   return (
     <>
-      <AppBar />
+      {/* <Navbar /> */}
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

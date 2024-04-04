@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.13.12",
     "@clerk/nextjs": "^4.29.10",
     "@editorjs/code": "^2.8.0",
     "@editorjs/editorjs": "^2.27.0",
@@ -51,9 +52,11 @@
     "editorjs-react-renderer": "^3.5.1",
     "embla-carousel-autoplay": "^8.0.0-rc07",
     "embla-carousel-react": "^8.0.0-rc07",
+    "github-slugger": "^2.0.0",
     "jsonwebtoken": "^9.0.0",
     "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.354.0",
+    "marked": "^12.0.1",
     "nanoid": "^5.0.2",
     "next": "14.1.3",
     "next-auth": "^4.22.1",
@@ -63,6 +66,7 @@
     "react-dom": "^18",
     "react-dropzone": "^14.2.3",
     "react-hook-form": "^7.44.2",
+    "react-icons": "^5.0.1",
     "react-textarea-autosize": "^8.5.2",
     "resend": "^3.2.0",
     "tailwind-merge": "^2.2.1",

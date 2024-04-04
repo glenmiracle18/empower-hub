@@ -1,6 +1,4 @@
 import BackButton from "@/components/common/back-button";
-import Carousel from "@/components/layouts/carousel-login";
-import { getAuthSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import "../globals.css";
 
@@ -14,22 +12,15 @@ export default async function AuthLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getAuthSession();
-
-  if (session && session.user) {
-    redirect("/home");
-  }
-
   return (
-    <section className="flex flex-col md:flex-row h-screen items-center">
+    <section className="flex h-screen flex-col items-center md:flex-row">
       <BackButton type="chevron" />
       <div
-        className="bg-background w-full md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
-        flex items-center justify-center"
+        className="flex h-screen w-full items-center justify-center bg-background px-6 md:mx-auto md:w-1/2 md:max-w-md lg:max-w-full
+        lg:px-16 xl:w-1/3 xl:px-12"
       >
         {children}
       </div>
-      <Carousel />
     </section>
   );
 }

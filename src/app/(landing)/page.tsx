@@ -58,12 +58,12 @@ export default function Home() {
               Get Started
             </Link>
             <Link
-              href="/sign-in"
+              href="/community"
               target="_blank"
               rel="noreferrer"
               className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
             >
-              Log-in
+              Join Community
             </Link>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function Home() {
             width={1200}
             height={1200}
             alt="wildlife"
-            className="p-8 rounded-md"
+            className="rounded-md p-8"
           />
         </div>
       </section>

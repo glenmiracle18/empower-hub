@@ -1,17 +1,17 @@
-import Providers from "@/components/providers";
-import { TailwindIndicator } from "@/components/common/tailwind-indicator";
+import Footer from "@/components/footer";
+import { Navbar } from "@/components/navbar";
 import { Toaster } from "@/components/ui/toaster";
 import { fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-import { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_BASE_URL || "https://ifvempleos.vercel.app/",
   ),
   title: {
-    default: "IFV",
+    default: "EMH",
     template: `%s - IFV`,
   },
   description: "Plataforma de empleo de IFV",
@@ -49,8 +49,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontSans.variable,
         )}
       >
-        <ClerkProvider>{children}</ClerkProvider>?
-        <TailwindIndicator />
+        <ClerkProvider>
+        <Navbar />
+        {children}
+        <Footer />
+        </ClerkProvider>
         <Toaster />
       </body>
     </html>

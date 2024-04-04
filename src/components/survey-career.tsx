@@ -13,14 +13,18 @@ const SurveyCareer: React.FC<Props> = ({ career }) => {
   const getQuestions = useQuestionStore((state) => state.getQuestions);
 
   const handleClick = () => {
-    getQuestions()
-    router.push(`/encuesta/${career}`)
-  }
+    getQuestions();
+    router.push(`/encuesta/${career}`);
+  };
 
   return (
-    <CareerCard career={career} handleClick={handleClick} classNameIcon="left-[-3rem] group-hover:left-0">
-      <div className="w-full h-full top-0 left-0 rounded-xl z-10">
-        <p className="text-sm text-white">Total de votos</p>
+    <CareerCard
+      career={career}
+      handleClick={handleClick}
+      classNameIcon="left-[-3rem] group-hover:left-0"
+    >
+      <div className="left-0 top-0 z-10 h-full w-full rounded-xl">
+        <p className="text-sm text-white">Total Votes</p>
         <p className="text-5xl font-bold text-white">0</p>
       </div>
     </CareerCard>
