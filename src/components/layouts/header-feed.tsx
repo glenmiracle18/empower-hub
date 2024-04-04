@@ -6,7 +6,7 @@ import {
   EllipsisHorizontalCircleIcon,
 } from "@heroicons/react/24/outline";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { getAuthSession } from "@/lib/auth";
+import { auth } from "@clerk/nextjs";
 import {
   Sheet,
   SheetClose,
@@ -21,13 +21,12 @@ import ButtonLink from "../common/button-link";
 import { ThemeToggle } from "../common/theme-toggle";
 
 const HeaderFeed: React.FC = async () => {
-  const session = await getAuthSession();
   const user = session?.user;
 
   return (
-    <div className="w-full px-4 sm:p-0 flex flex-col gap-4">
+    <div className="flex w-full flex-col gap-4 px-4 sm:p-0">
       <div className="hidden lg:block">
-        <h1 className="font-bold text-xl">Inicio</h1>
+        <h1 className="text-xl font-bold">Inicio</h1>
       </div>
       <div className="flex items-center justify-between lg:hidden">
         <Sheet>
@@ -62,8 +61,8 @@ const HeaderFeed: React.FC = async () => {
                 text="Guardados"
                 ariaLabel="Guardados"
                 variant="ghost"
-                className="hover:bg-gray-200 dark:hover:bg-slate-800 justify-start "
-                icon={<BookmarkIcon className="w-6 h-6 order-first mr-4" />}
+                className="justify-start hover:bg-gray-200 dark:hover:bg-slate-800 "
+                icon={<BookmarkIcon className="order-first mr-4 h-6 w-6" />}
               />
             </SheetClose>
             <SheetClose asChild>
@@ -72,8 +71,8 @@ const HeaderFeed: React.FC = async () => {
                 text="Notificaciones"
                 ariaLabel="Notificaciones"
                 variant="ghost"
-                className="hover:bg-gray-200 dark:hover:bg-slate-800 justify-start "
-                icon={<BellIcon className="w-6 h-6 order-first mr-4" />}
+                className="justify-start hover:bg-gray-200 dark:hover:bg-slate-800 "
+                icon={<BellIcon className="order-first mr-4 h-6 w-6" />}
               />
             </SheetClose>
             <SheetClose asChild>
@@ -85,8 +84,8 @@ const HeaderFeed: React.FC = async () => {
                 text="Configuración"
                 ariaLabel="Configuración"
                 variant="ghost"
-                className="hover:bg-gray-200 dark:hover:bg-slate-800 justify-start"
-                icon={<Cog8ToothIcon className="w-6 h-6 order-first mr-4" />}
+                className="justify-start hover:bg-gray-200 dark:hover:bg-slate-800"
+                icon={<Cog8ToothIcon className="order-first mr-4 h-6 w-6" />}
               />
             </SheetClose>
             {user.role === "ENTERPRISE" && (
@@ -99,7 +98,7 @@ const HeaderFeed: React.FC = async () => {
             )}
           </SheetContent>
         </Sheet>
-        <BellIcon className="w-6 h-6" />
+        <BellIcon className="h-6 w-6" />
       </div>
     </div>
   );

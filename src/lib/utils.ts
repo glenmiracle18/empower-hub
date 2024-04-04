@@ -6,11 +6,15 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+// breaks down the username
 export const simplifyName = (fullName: string): string => {
   const words = fullName.split(" ");
   let simplifiedName = "";
   if (words.length >= 2) {
-    simplifiedName = words.slice(0, 2).map((word) => word.charAt(0)).join("");
+    simplifiedName = words
+      .slice(0, 2)
+      .map((word) => word.charAt(0))
+      .join("");
   } else {
     simplifiedName = words[0].charAt(0);
   }

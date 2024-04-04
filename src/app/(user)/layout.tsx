@@ -2,7 +2,7 @@ import "../globals.css";
 import AsideFeed from "@/components/layouts/aside-feed";
 import { NavBar } from "@/components/layouts/navbar";
 import SidebarFeed from "@/components/layouts/sidebar-feed";
-import { getAuthSession } from "@/lib/auth";
+import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 export default async function UserLayout({
@@ -10,26 +10,25 @@ export default async function UserLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getAuthSession();
+  const { userId } = auth();
 
-  if (session && session.user) {
-    const { user } = session;
-
-    return (
-      <div className="bg-background">
-        <main
-          vaul-drawer-wrapper=""
-          className="bg-background xl:w-[1440px] lg:w-[1024px] max-w-full mr-auto ml-auto py-0 lg:px-8 xl:px-16 flex justify-center z-10"
-        >
-          <NavBar user={user} />
-          <SidebarFeed user={user} />
-          <div className="w-full lg:w-[75%] xl:w-[50%] lg:pr-0 xl:pr-4 pt-4 lg:pt-6 sm:p-10">
-            {children}
-          </div>
-          <AsideFeed />
-        </main>
-      </div>
-    );
+  if (!userId) {
+    return redirect("/");
   }
-  return redirect("/");
+
+  return (
+    <div className="bg-background">
+      <main
+        vaul-drawer-wrapper=""
+        className="z-10 ml-auto mr-auto flex max-w-full justify-center bg-background py-0 lg:w-[1024px] lg:px-8 xl:w-[1440px] xl:px-16"
+      >
+        <NavBar user={userId} />
+        <SidebarFeed user={userId} />
+        <div className="w-full pt-4 sm:p-10 lg:w-[75%] lg:pr-0 lg:pt-6 xl:w-[50%] xl:pr-4">
+          {children}
+        </div>
+        <AsideFeed />
+      </main>
+    </div>
+  );
 }
