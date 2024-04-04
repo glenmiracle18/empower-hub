@@ -1,6 +1,6 @@
-<h1 align="center"><a href="https://ifvempleos.vercel.app/">Job Platform</a></h1>
+<h1 align="center"><a href="https://ifvempleos.vercel.app/">EmpowerHub</a></h1>
 
-<p align="center">An online student job platform that connects students with part-time jobs, internships, and entry-level positions.</p>
+<p align="center">EmpowerHub is a new, self-contained platform designed to bridge opportunities for youth, women, and wildlife. It is not a follow-on member of an existing product family nor a replacement for any existing system. </p>
 
 [![Job Platform](./src/app/opengraph-image.png)](https://ifvempleos.vercel.app/)
 
@@ -16,13 +16,12 @@
 - **Email:** [React Email](https://react.email)
 - **File Uploads:** [uploadthing](https://uploadthing.com)
 
-## Features to be Implemented for Student Employment Platform
+## Features to be Implemented for EmpowerHub Platform
 
 - [x] User Registration and Authentication
 - [ ] Profile Creation with Education and Skills
-- [x] Job Posting and Search Functionality
 - [ ] Resume/CV Upload and Management
-- [ ] Real-time Messaging for Students and Employers
+- [ ] Real-time Messaging for Stakeholders
 - [ ] Notifications for New Job Opportunities
 - [ ] Recommendations and Matching Algorithm
 - [ ] Feedback and Ratings System for Employers and Students
@@ -36,7 +35,7 @@
 1. Clone the repository
 
    ```bash
-   git clone https://github.com/cesar-brandon/job-platform.git
+   git clone https://github.com/glenmiracle18/empower-hub.git
    ```
 
 2. Install dependencies using pnpm
@@ -62,8 +61,8 @@
 Thanks goes to these wonderful people for their contributions:
 
 <p align="center">
- <a href="https://github.com/cesar-brandon/job-platform/graphs/contributors">
-   <img src="https://contrib.rocks/image?repo=cesar-brandon/job-platform" />
+ <a href="https://github.com/glenmiracle18/empower-hub/graphs/contributors">
+   <img src="https://contrib.rocks/image?repo=glenmiracle-18/empower-hub" />
  </a>
 </p>
 
